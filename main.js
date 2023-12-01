@@ -34,13 +34,21 @@ mostrarSenha.addEventListener('click', function() {
     entradaSenha.type = entradaSenha.type === 'password' ? 'text' : 'password';
 
     if(click.classList.contains('fa-eye-slash')){
-
-        click.classList.remove('fa-eye-slash');
-        click.classList.add('fa-eye');
+        
+        click.style.opacity = 0;
+        setTimeout( () => {
+            click.classList.remove('fa-eye-slash');
+            click.classList.add('fa-eye');
+            click.style.opacity = 1;
+        },1000)
 
     } else{
-        click.classList.remove('fa-eye');
-        click.classList.add('fa-eye-slash');
+        click.style.opacity = 0;
+        setTimeout(() => {
+            click.classList.remove('fa-eye');
+            click.classList.add('fa-eye-slash');
+            click.style.opacity = 1;
+        }, 1000);
     }
 });
 
